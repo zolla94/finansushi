@@ -1,0 +1,37 @@
+entity Utente (Utenti) {}
+
+entity Ordine (Ordini) {}
+
+entity StoricoOrdini (StoricoOrdini) {
+	note String
+}
+
+entity Locale (Locali) {
+	nome String
+}
+
+entity Piatto (Piatti) {
+	codice String,
+    url String,
+    spicy Boolean,
+    vegan Boolean,
+    limiteOrdine Boolean
+}
+
+relationship OneToMany {
+	Locale to Ordine {locale}
+    Utente to Ordine {utente}
+    Utente to StoricoOrdini {utente}
+    Locale to StoricoOrdini {locale}
+    Ordine to Piatto
+    StoricoOrdini to Piatto
+}
+
+relationship OneToOne {
+	Piatto {locale} to Locale
+}
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass
+
