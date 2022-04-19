@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20220418203735",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "storico_ordini",
+  "fields": [
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "StoricoOrdini",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "piatto",
+      "otherEntityRelationshipName": "storicoOrdini",
+      "ownerSide": false,
+      "relationshipName": "piatto",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "utente",
+      "otherEntityRelationshipName": "storicoOrdini",
+      "relationshipName": "utente",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "locale",
+      "otherEntityRelationshipName": "storicoOrdini",
+      "relationshipName": "locale",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

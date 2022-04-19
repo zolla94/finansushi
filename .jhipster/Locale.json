@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220418203736",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "locali",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Locale",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ordine",
+      "otherEntityRelationshipName": "locale",
+      "relationshipName": "ordine",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "storicoOrdini",
+      "otherEntityRelationshipName": "locale",
+      "relationshipName": "storicoOrdini",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "piatto",
+      "otherEntityRelationshipName": "locale",
+      "relationshipName": "piatto",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

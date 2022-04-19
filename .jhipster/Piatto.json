@@ -1,0 +1,61 @@
+{
+  "applications": "*",
+  "changelogDate": "20220418203737",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "piatti",
+  "fields": [
+    {
+      "fieldName": "codice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descrizione",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "spicy",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "vegan",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "limiteOrdine",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Piatto",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ordine",
+      "otherEntityRelationshipName": "piatto",
+      "ownerSide": true,
+      "relationshipName": "ordine",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "storicoOrdini",
+      "otherEntityRelationshipName": "piatto",
+      "ownerSide": true,
+      "relationshipName": "storicoOrdini",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "locale",
+      "otherEntityRelationshipName": "piatto",
+      "relationshipName": "locale",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

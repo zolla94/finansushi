@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="storicoOrdini">
+      <h2 data-cy="storicoOrdiniDetailsHeading"><span jhiTranslate="finanSushiApp.storicoOrdini.detail.title">Storico Ordini</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ storicoOrdini.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.storicoOrdini.note">Note</span></dt>
+        <dd>
+          <span>{{ storicoOrdini.note }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.storicoOrdini.utente">Utente</span></dt>
+        <dd>
+          <div *ngIf="storicoOrdini.utente">
+            <a [routerLink]="['/utente', storicoOrdini.utente?.id, 'view']">{{ storicoOrdini.utente?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.storicoOrdini.locale">Locale</span></dt>
+        <dd>
+          <div *ngIf="storicoOrdini.locale">
+            <a [routerLink]="['/locale', storicoOrdini.locale?.id, 'view']">{{ storicoOrdini.locale?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/storico-ordini', storicoOrdini.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

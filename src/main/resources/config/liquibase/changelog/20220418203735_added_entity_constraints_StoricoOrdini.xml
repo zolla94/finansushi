@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity StoricoOrdini.
+    -->
+    <changeSet id="20220418203735-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="utente_id"
+                                 baseTableName="storico_ordini"
+                                 constraintName="fk_storico_ordini__utente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="utenti"/>
+
+        <addForeignKeyConstraint baseColumnNames="locale_id"
+                                 baseTableName="storico_ordini"
+                                 constraintName="fk_storico_ordini__locale_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locali"/>
+    </changeSet>
+</databaseChangeLog>

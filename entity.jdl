@@ -12,6 +12,7 @@ entity Locale (Locali) {
 
 entity Piatto (Piatti) {
 	codice String,
+	descrizione String,
     url String,
     spicy Boolean,
     vegan Boolean,
@@ -23,12 +24,12 @@ relationship OneToMany {
     Utente to Ordine {utente}
     Utente to StoricoOrdini {utente}
     Locale to StoricoOrdini {locale}
-    Ordine to Piatto
-    StoricoOrdini to Piatto
+	Locale to Piatto
 }
 
 relationship OneToOne {
-	Piatto {locale} to Locale
+	    Piatto to Ordine
+    Piatto to StoricoOrdini
 }
 
 paginate * with pagination

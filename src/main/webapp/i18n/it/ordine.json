@@ -1,0 +1,26 @@
+{
+  "finanSushiApp": {
+    "ordine": {
+      "home": {
+        "title": "Ordines",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Ordine",
+        "createOrEditLabel": "Genera o modifica un Ordine",
+        "notFound": "No Ordines found"
+      },
+      "created": "&Egrave; stato generato un nuovo Ordine con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Ordine identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Ordine con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Ordine {{ id }}?"
+      },
+      "detail": {
+        "title": "Ordine"
+      },
+      "id": "ID",
+      "piatto": "Piatto",
+      "locale": "Locale",
+      "utente": "Utente"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-piatto-heading" data-cy="PiattoCreateUpdateHeading" jhiTranslate="finanSushiApp.piatto.home.createOrEditLabel">
+        Create or edit a Piatto
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.codice" for="field_codice">Codice</label>
+          <input type="text" class="form-control" name="codice" id="field_codice" data-cy="codice" formControlName="codice" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.descrizione" for="field_descrizione">Descrizione</label>
+          <input
+            type="text"
+            class="form-control"
+            name="descrizione"
+            id="field_descrizione"
+            data-cy="descrizione"
+            formControlName="descrizione"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.url" for="field_url">Url</label>
+          <input type="text" class="form-control" name="url" id="field_url" data-cy="url" formControlName="url" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.spicy" for="field_spicy">Spicy</label>
+          <input type="checkbox" class="form-check" name="spicy" id="field_spicy" data-cy="spicy" formControlName="spicy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.vegan" for="field_vegan">Vegan</label>
+          <input type="checkbox" class="form-check" name="vegan" id="field_vegan" data-cy="vegan" formControlName="vegan" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.limiteOrdine" for="field_limiteOrdine">Limite Ordine</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="limiteOrdine"
+            id="field_limiteOrdine"
+            data-cy="limiteOrdine"
+            formControlName="limiteOrdine"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.ordine" for="field_ordine">Ordine</label>
+          <select class="form-control" id="field_ordine" data-cy="ordine" name="ordine" formControlName="ordine">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="ordineOption.id === editForm.get('ordine')!.value?.id ? editForm.get('ordine')!.value : ordineOption"
+              *ngFor="let ordineOption of ordinesCollection; trackBy: trackOrdineById"
+            >
+              {{ ordineOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.storicoOrdini" for="field_storicoOrdini">Storico Ordini</label>
+          <select
+            class="form-control"
+            id="field_storicoOrdini"
+            data-cy="storicoOrdini"
+            name="storicoOrdini"
+            formControlName="storicoOrdini"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                storicoOrdiniOption.id === editForm.get('storicoOrdini')!.value?.id
+                  ? editForm.get('storicoOrdini')!.value
+                  : storicoOrdiniOption
+              "
+              *ngFor="let storicoOrdiniOption of storicoOrdinisCollection; trackBy: trackStoricoOrdiniById"
+            >
+              {{ storicoOrdiniOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="finanSushiApp.piatto.locale" for="field_locale">Locale</label>
+          <select class="form-control" id="field_locale" data-cy="locale" name="locale" formControlName="locale">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="localeOption.id === editForm.get('locale')!.value?.id ? editForm.get('locale')!.value : localeOption"
+              *ngFor="let localeOption of localesSharedCollection; trackBy: trackLocaleById"
+            >
+              {{ localeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

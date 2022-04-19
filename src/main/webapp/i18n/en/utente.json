@@ -1,0 +1,25 @@
+{
+  "finanSushiApp": {
+    "utente": {
+      "home": {
+        "title": "Utentes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Utente",
+        "createOrEditLabel": "Create or edit a Utente",
+        "notFound": "No Utentes found"
+      },
+      "created": "A new Utente is created with identifier {{ param }}",
+      "updated": "A Utente is updated with identifier {{ param }}",
+      "deleted": "A Utente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Utente {{ id }}?"
+      },
+      "detail": {
+        "title": "Utente"
+      },
+      "id": "ID",
+      "ordine": "Ordine",
+      "storicoOrdini": "Storico Ordini"
+    }
+  }
+}

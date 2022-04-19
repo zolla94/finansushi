@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220418203734",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "ordini",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Ordine",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "piatto",
+      "otherEntityRelationshipName": "ordine",
+      "ownerSide": false,
+      "relationshipName": "piatto",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "locale",
+      "otherEntityRelationshipName": "ordine",
+      "relationshipName": "locale",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "utente",
+      "otherEntityRelationshipName": "ordine",
+      "relationshipName": "utente",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

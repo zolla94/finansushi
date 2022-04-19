@@ -1,0 +1,32 @@
+{
+  "finanSushiApp": {
+    "piatto": {
+      "home": {
+        "title": "Piattos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Piatto",
+        "createOrEditLabel": "Genera o modifica un Piatto",
+        "notFound": "No Piattos found"
+      },
+      "created": "&Egrave; stato generato un nuovo Piatto con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Piatto identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Piatto con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Piatto {{ id }}?"
+      },
+      "detail": {
+        "title": "Piatto"
+      },
+      "id": "ID",
+      "codice": "Codice",
+      "descrizione": "Descrizione",
+      "url": "Url",
+      "spicy": "Spicy",
+      "vegan": "Vegan",
+      "limiteOrdine": "Limite Ordine",
+      "ordine": "Ordine",
+      "storicoOrdini": "Storico Ordini",
+      "locale": "Locale"
+    }
+  }
+}

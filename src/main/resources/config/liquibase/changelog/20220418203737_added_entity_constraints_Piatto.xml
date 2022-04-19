@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Piatto.
+    -->
+    <changeSet id="20220418203737-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ordine_id"
+                                 baseTableName="piatti"
+                                 constraintName="fk_piatti__ordine_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ordini"/>
+
+        <addForeignKeyConstraint baseColumnNames="storico_ordini_id"
+                                 baseTableName="piatti"
+                                 constraintName="fk_piatti__storico_ordini_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="storico_ordini"/>
+
+        <addForeignKeyConstraint baseColumnNames="locale_id"
+                                 baseTableName="piatti"
+                                 constraintName="fk_piatti__locale_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locali"/>
+    </changeSet>
+</databaseChangeLog>

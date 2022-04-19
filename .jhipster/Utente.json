@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20220418203733",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "utenti",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Utente",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ordine",
+      "otherEntityRelationshipName": "utente",
+      "relationshipName": "ordine",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "storicoOrdini",
+      "otherEntityRelationshipName": "utente",
+      "relationshipName": "storicoOrdini",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

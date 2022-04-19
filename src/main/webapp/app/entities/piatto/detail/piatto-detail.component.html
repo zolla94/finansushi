@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="piatto">
+      <h2 data-cy="piattoDetailsHeading"><span jhiTranslate="finanSushiApp.piatto.detail.title">Piatto</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ piatto.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.codice">Codice</span></dt>
+        <dd>
+          <span>{{ piatto.codice }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.descrizione">Descrizione</span></dt>
+        <dd>
+          <span>{{ piatto.descrizione }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.url">Url</span></dt>
+        <dd>
+          <span>{{ piatto.url }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.spicy">Spicy</span></dt>
+        <dd>
+          <span>{{ piatto.spicy }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.vegan">Vegan</span></dt>
+        <dd>
+          <span>{{ piatto.vegan }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.limiteOrdine">Limite Ordine</span></dt>
+        <dd>
+          <span>{{ piatto.limiteOrdine }}</span>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.ordine">Ordine</span></dt>
+        <dd>
+          <div *ngIf="piatto.ordine">
+            <a [routerLink]="['/ordine', piatto.ordine?.id, 'view']">{{ piatto.ordine?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.storicoOrdini">Storico Ordini</span></dt>
+        <dd>
+          <div *ngIf="piatto.storicoOrdini">
+            <a [routerLink]="['/storico-ordini', piatto.storicoOrdini?.id, 'view']">{{ piatto.storicoOrdini?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="finanSushiApp.piatto.locale">Locale</span></dt>
+        <dd>
+          <div *ngIf="piatto.locale">
+            <a [routerLink]="['/locale', piatto.locale?.id, 'view']">{{ piatto.locale?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/piatto', piatto.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

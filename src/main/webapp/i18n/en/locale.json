@@ -1,0 +1,27 @@
+{
+  "finanSushiApp": {
+    "locale": {
+      "home": {
+        "title": "Locales",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Locale",
+        "createOrEditLabel": "Create or edit a Locale",
+        "notFound": "No Locales found"
+      },
+      "created": "A new Locale is created with identifier {{ param }}",
+      "updated": "A Locale is updated with identifier {{ param }}",
+      "deleted": "A Locale is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Locale {{ id }}?"
+      },
+      "detail": {
+        "title": "Locale"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "ordine": "Ordine",
+      "storicoOrdini": "Storico Ordini",
+      "piatto": "Piatto"
+    }
+  }
+}

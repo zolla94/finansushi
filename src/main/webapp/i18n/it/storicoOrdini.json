@@ -1,0 +1,27 @@
+{
+  "finanSushiApp": {
+    "storicoOrdini": {
+      "home": {
+        "title": "StoricoOrdinis",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Storico Ordini",
+        "createOrEditLabel": "Genera o modifica un Storico Ordini",
+        "notFound": "No Storico Ordinis found"
+      },
+      "created": "&Egrave; stato generato un nuovo Storico Ordini con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Storico Ordini identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Storico Ordini con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Storico Ordini {{ id }}?"
+      },
+      "detail": {
+        "title": "Storico Ordini"
+      },
+      "id": "ID",
+      "note": "Note",
+      "piatto": "Piatto",
+      "utente": "Utente",
+      "locale": "Locale"
+    }
+  }
+}
